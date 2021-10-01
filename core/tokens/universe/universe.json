@@ -1,0 +1,139 @@
+{
+  "color": {
+    "universe": {
+      "borealis": {
+        "10": {
+          "value": "#F2FFEE",
+          "comment": "Super chido!",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "20": {
+          "value": "#CFFAC2",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "30": {
+          "value": "#B5F4A2",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "40": {
+          "value": "#8DDD74",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "50": {
+          "value": "#68C74A",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "60": {
+          "value": "#29AC00",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "70": {
+          "value": "#098300",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "80": {
+          "value": "#196700",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "90": {
+          "value": "#104500",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "100": {
+          "value": "#112D0C",
+          "attributes": {
+            "colorType": "universe"
+          }
+        }
+      },
+      "moonlight": {
+        "0": {
+          "value": "#FFFFF",
+          "comment": "White",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "10": {
+          "value": "#F8F9FC",
+          "comment": "Super chido!",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "20": {
+          "value": "#EEF0F7",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "30": {
+          "value": "#D1D8DF",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "40": {
+          "value": "#AFBCC6",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "50": {
+          "value": "#81919C",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "60": {
+          "value": "#63727C",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "70": {
+          "value": "#4A5760",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "80": {
+          "value": "#333C42",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "90": {
+          "value": "#191E23",
+          "attributes": {
+            "colorType": "universe"
+          }
+        },
+        "100": {
+          "value": "#0C0F12",
+          "attributes": {
+            "colorType": "universe"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+    "color": {
+        "consumer": {
+            "light": {
+                "primary": {
+                    "default": {
+                        "value": "{color.universe.borealis.60}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "hover": {
+                        "value": "{color.universe.borealis.70}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "active": {
+                        "value": "{color.universe.borealis.70}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "disabled": {
+                        "value": "{color.universe.moonlight.20}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    }
+                },
+                "onPrimary": {
+                    "high": {
+                        "value": "{color.universe.moonlight.0}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "mid": {
+                        "value": "{color.universe.moonlight.20}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "low": {
+                        "value": "{color.universe.moonlight.30}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    }
+                },
+                "background": {
+                    "main": {
+                        "value": "{color.universe.moonlight.0}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "alt": {
+                        "value": "{color.universe.moonlight.10}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    }
+                }
+                
+            },
+            "dark": {
+                "primary": {
+                    "default": {
+                        "value": "{color.universe.borealis.60}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "hover": {
+                        "value": "{color.universe.borealis.70}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "active": {
+                        "value": "{color.universe.borealis.80}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "disabled": {
+                        "value": "{color.universe.moonlight.80}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    }
+                },
+                "onPrimary": {
+                    "high": {
+                        "value": "{color.universe.moonlight.0}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "mid": {
+                        "value": "{color.universe.moonlight.20}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "low": {
+                        "value": "{color.universe.moonlight.30}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    }
+                },
+                "background": {
+                    "main": {
+                        "value": "{color.universe.moonlight.100}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    },
+                    "alt": {
+                        "value": "{color.universe.moonlight.80}",
+                        "attributes": {
+                            "colorType": "theme",
+                            "theme": "consumer"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "npx style-dictionary build"
+  },
+  "dependencies": {
+    "style-dictionary": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.1"
+  }
+}

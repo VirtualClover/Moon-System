@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly
+  Generated on Wed, 29 Sep 2021 14:32:00 GMT
+-->
+<resources>
+  <color name="primaryDefault">@universe/borealis60</color>
+  <color name="primaryHover">@universe/borealis70</color>
+  <color name="backgroundMain">@universe/moonlight0</color>
+  
+</resources>

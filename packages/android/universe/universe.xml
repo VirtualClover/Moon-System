@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly
+  Generated on Wed, 29 Sep 2021 14:32:00 GMT
+-->
+<resources>
+  <color name="borealis10">#f2ffee</color><!-- Super chido! -->
+  <color name="borealis20">#cffac2</color>
+  <color name="borealis30">#b5f4a2</color>
+  <color name="borealis40">#8ddd74</color>
+  <color name="borealis50">#68c74a</color>
+  <color name="borealis60">#29ac00</color>
+  <color name="borealis70">#098300</color>
+  <color name="borealis80">#196700</color>
+  <color name="borealis90">#104500</color>
+  <color name="borealis100">#112d0c</color>
+  <color name="moonlight0">#000000</color><!-- White -->
+  <color name="moonlight10">#f8f9fc</color><!-- Super chido! -->
+  <color name="moonlight20">#eef0f7</color>
+  <color name="moonlight30">#d1d8df</color>
+  <color name="moonlight40">#afbcc6</color>
+  <color name="moonlight50">#81919c</color>
+  <color name="moonlight60">#63727c</color>
+  <color name="moonlight70">#4a5760</color>
+  <color name="moonlight80">#333c42</color>
+  <color name="moonlight90">#191e23</color>
+  <color name="moonlight100">#0c0f12</color>
+  
+</resources>
