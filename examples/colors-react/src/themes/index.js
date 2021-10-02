@@ -1,3 +1,4 @@
 export {themes} from './prebuilt';
-export {MSThemeProvider} from './MSThemeProvider/MSThemeProvider.component';
+export {MSThemeProvider} from './MSThemeProvider';
+export {MSThemeInverter} from './MSThemeInverter';
 

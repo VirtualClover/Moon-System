@@ -1,13 +1,25 @@
-import { createContext } from "react";
-import { themes } from "../prebuilt";
+import { ThemeProvider } from 'styled-components';
+import { themes } from '../prebuilt';
 
-
-export const ThemeContext = createContext();
-
+/**
+ * Theme provider of the moon system, it takes a moon theme and its mode
+ * @param {string} theme a theme from the Moon System
+ *  @param {string} mode light or dark
+ * @returns 
+ */
 export const MSThemeProvider = (props) => {
     return (
-        <ThemeContext.Provider value={{ theme: { name: props.theme, mode: props.mode, values: themes[`${props.theme}Theme`] } }}>
+        <ThemeProvider
+            theme={
+                themes[`${props.theme}Theme`][props.mode]
+            }
+        >
             {props.children}
-        </ThemeContext.Provider>
+        </ThemeProvider>
     );
+};
+
+MSThemeProvider.defaultProps = {
+    theme: 'consumer',
+    mode: 'light'
 };

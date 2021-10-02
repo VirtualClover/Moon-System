@@ -1,12 +1,14 @@
+interface MSModeAttributes {
+  theme: string;
+  mode: 'light' | 'dark';
+}
+
 interface MSMode {
-    colors: any,
-    attributes:{
-        theme: string,
-        mode: string
-    }
-};
+  colors: any;
+  attributes: MSModeAttributes
+}
 
 interface MSTheme {
-    light: MSMode,
-    dakr: MSMode
-};
+  light: MSMode;
+  dark: MSMode;
+}
