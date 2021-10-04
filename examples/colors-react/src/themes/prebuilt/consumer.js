@@ -7,9 +7,12 @@ export const consumerTheme = Object.freeze(
                 primaryHover: universe.borealis70,
                 link: universe.borealis70,
                 background: universe.moonlight0,
+                onBackgroundHigh: universe.moonlight100,
+                onBackgroundMid: universe.moonlight80,
+                onBackgroundLow: universe.moonlight60,
                 onPrimaryHigh: universe.moonlight0,
             },
-            attributes:{
+            attributes: {
                 theme: 'consumer',
                 mode: 'light'
             },
@@ -20,9 +23,12 @@ export const consumerTheme = Object.freeze(
                 primaryHover: universe.borealis70,
                 link: universe.borealis50,
                 background: universe.moonlight100,
+                onBackgroundHigh: universe.moonlight0,
                 onPrimaryHigh: universe.moonlight0,
+                onBackgroundMid: universe.moonlight30,
+                onBackgroundLow: universe.moonlight50,
             },
-            attributes:{
+            attributes: {
                 theme: 'consumer',
                 mode: 'dark'
             },
