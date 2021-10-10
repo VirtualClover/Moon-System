@@ -58,7 +58,7 @@ function App() {
             margin={'0 200px 0 0'}
             maxWidth={'800px'}
           >
-            <StyledTitle>Consumer Theme</StyledTitle>
+            <StyledTitle>Consumer Theme in {mode} mode</StyledTitle>
             <StyledSubTitle>Using the mode from the provider</StyledSubTitle>
             <StyledParagraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -83,7 +83,7 @@ function App() {
               margin={'0 200px 0 0'}
               maxWidth={'800px'}
             >
-              <StyledTitle>Consumer Theme</StyledTitle>
+              <StyledTitle>Consumer Theme in the inverted mode</StyledTitle>
               <StyledSubTitle>With an inverter component</StyledSubTitle>
               <StyledParagraph>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

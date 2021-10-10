@@ -3,6 +3,7 @@
     "build": "npx style-dictionary build"
   },
   "dependencies": {
+    "node-fetch": "^3.0.0",
     "style-dictionary": "^3.0.2"
   },
   "devDependencies": {
