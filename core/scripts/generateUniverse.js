@@ -1,14 +1,11 @@
 var fs = require('fs');
 const https = require('https')
-var TOKENS = require('../tokens/universe/universe.json');
 var ENV = require('../../env/env.json');
-var CONSTANTS = require('./CONSTANTS.js');
+var CONSTANTS = require('../utils/CONSTANTS.js');
 const createComment = require('../utils/createComment.js');
 async function generateUniverse() {
-  console.log('Generating universe JS file...');
-  const url = ('https://galileo-api-bqjgycnf5q-uc.a.run.app/colors');
   let universe = '';
-  await https.get(url, res => {
+  await https.get(ENV.URLS.GALILEO.COLORS, res => {
     res.on('data', chunk => {
       universe += chunk;
     });
@@ -23,13 +20,13 @@ async function generateUniverse() {
 
 }
 
-
 async function writeToJS(data) {
+  console.log('\x1b[37m', 'Generating universe JS/TS file...');
   const types = {
-    color: ['interface UniverseColor {', '\t0?: string', '\t10: string', '\t20: string', '\t30: string', '\t40: string', '\t50: string', '\t60: string', '\t70: string', '\t80: string', '\t90: string', '\t100: string', '}']
+    color: ['interface UniverseColor {', '\treadonly 0?: string', '\treadonly 10: string', '\treadonly 20: string', '\treadonly 30: string', '\treadonly 40: string', '\treadonly 50: string', '\treadonly 60: string', '\treadonly 70: string', '\treadonly 80: string', '\treadonly 90: string', '\treadonly 100: string', '}']
   };
   const path = 'packages/js/universe/';
-  let colors = [CONSTANTS.DISCLAIMER.js, '// Universe', '//Figma file: https://www.figma.com/file/XU1kwGVYTHQ21HJiYpYSDQ/Moon-Foundation?node-id=129%3A2873'];
+  let colors = [CONSTANTS.DISCLAIMER.js, '// Universe', `// Figma: ${ENV.URLS.FIGMA.FOUNDATIONS}`, createComment([`Documentation: https://${ENV.WIKI.HOSTNAME}/wiki/spaces/${ENV.WIKI.SPACE}/pages/${ENV.WIKI.PAGE_IDS.UNIVERSE}`], 'js')];
   let typing = [CONSTANTS.DISCLAIMER.js, '//Universe Typing', ...types.color];
   for (const color in data) {
     let parent = data[color];
@@ -40,7 +37,7 @@ async function writeToJS(data) {
         }`;
       await shades.push(shadeVar);
     }
-    let colorVar = `export const ${color} = {\n${shades.join('\n')}\n};`;
+    let colorVar = `export const ${color} = Object.freeze({\n${shades.join('\n')}\n});`;
     let colorType = `export const ${color} : UniverseColor;`;
     colors.push(colorVar);
     typing.push(colorType);
@@ -52,28 +49,42 @@ async function writeToJS(data) {
     if (err) {
       return console.error(err);
     }
-
-
-    console.log('\x1b[32m', 'JS Data written successfully!');
+  });
+  let indexContent = `${CONSTANTS.DISCLAIMER.js}export * as universe from './universe';`;
+  await fs.writeFile(`${path}index.js`, indexContent, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+  });
+  await fs.writeFile(`${path}index.d.ts`, indexContent, function (err) {
+    if (err) {
+      return console.error(err);
+    }
   });
   await fs.writeFile(`${path}universe.d.ts`, typing.join('\n'), function (err) {
     if (err) {
       return console.error(err);
     }
-    console.log('\x1b[32m', 'Delcarative TS written successfully!');
   });
+  await fs.copyFile(`core/utils/tests/universe.test.js`, `${path}universe.test.js`, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+  });
+  console.log('\x1b[32m', 'JS/TS files generated succesfully!');
   createMDDoc(data);
 };
 
 async function createMDDoc(data) {
+  console.log('\x1b[37m', 'Writting the documentation...');
   let doc = [`This is Bitso's general color palette.`, `Last generated:  ${new Date()}`];
-  let tableHead = `|| ||*Shade*||*Hex*||*RGB*||*HSL*||*Description*||`;
+  let tableHead = `||*Shade*||*Hex*||*RGB*||*HSL*||*Description*||`;
   for (const color in data) {
     let parent = data[color];
     let shades = [];
     for (const shade in parent) {
       let shadeObj = parent[shade];
-      let shadeVar = `|{color:${shadeObj.hex}}■{color} | ${shade} | ${shadeObj.hex} | ${shadeObj.rgb} | ${shadeObj.hsl} | ${shadeObj.description ? shadeObj.description : ' '}|`;
+      let shadeVar = `|{color:${shadeObj.hex}}■{color} ${shade} | ${shadeObj.hex} | ${shadeObj.rgb} | ${shadeObj.hsl} | ${shadeObj.description ? shadeObj.description : ' '}|`;
       await shades.push(shadeVar);
     }
     let table = [`h2.${color}  `, tableHead, ...shades];
@@ -83,8 +94,8 @@ async function createMDDoc(data) {
   // console.log(doc.join('\n'));
   let requestOptions = {
     method: 'PUT',
-    hostname: ENV.WIKI_HOSTNANE,
-    path: ENV.WIKI_PATH,
+    hostname: ENV.WIKI.HOSTNAME,
+    path: ENV.WIKI.PATH + ENV.WIKI.PAGE_IDS.UNIVERSE,
     headers: {
       'Content-Type': 'application/json',
       'Authorization': ENV.TOKEN,
@@ -93,7 +104,7 @@ async function createMDDoc(data) {
   let requestBody = {
     type: "page",
     title: "Universe",
-    space: { key: "~423496812" },
+    space: { key: ENV.WIKI.SPACE },
     body: {
       storage: {
         value: parsedDoc,
@@ -110,13 +121,13 @@ async function createMDDoc(data) {
     res.on('end', () => {
       docData = JSON.parse(docData);
       // console.log(docData.version.number);
-      requestBody.version.number = docData.version.number+1;
+      requestBody.version.number = docData.version.number + 1;
       const req = https.request(requestOptions, res => {
         res.on('data', chunk => {
-          process.stdout.write(chunk)
+          //process.stdout.write(chunk)
         });
         res.on('end', () => {
-          console.log('Doc updated succesfully!');
+          console.log('\x1b[32m', 'Documentation updated succesfully!');
         })
       }).on('error', err => {
         console.log(err.message);
