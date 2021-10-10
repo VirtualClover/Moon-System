@@ -1,10 +1,8 @@
 {
   "scripts": {
-    "build": "npx style-dictionary build"
+    "build": "node core/scripts/generateUniverse.js"
   },
   "dependencies": {
-    "node-fetch": "^3.0.0",
-    "style-dictionary": "^3.0.2"
   },
   "devDependencies": {
     "@types/node": "^16.10.1"

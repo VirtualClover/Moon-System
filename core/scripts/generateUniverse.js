@@ -72,6 +72,7 @@ async function writeToJS(data) {
     }
   });
   console.log('\x1b[32m', 'JS/TS files generated succesfully!');
+  console.log('\x1b[32m', `All files generated at: ${path}`);
   createMDDoc(data);
 };
 
